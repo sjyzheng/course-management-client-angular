@@ -1,0 +1,7 @@
+<ul class="list-group">
+  <li *ngFor="let module of modules" class="list-group-item">
+    <a routerLink="/course-viewer/{{courseId}}/modules/{{module.id}}">
+      {{module.title}}
+    </a>
+  </li>
+</ul>
