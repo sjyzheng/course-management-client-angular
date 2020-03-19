@@ -1,6 +1,23 @@
-<div class="container">
-  {{course.title}}
-  <app-module-list></app-module-list>
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-dark bg-dark row">
+    <a routerLink="/"
+       class="fas fa-times fa-lg wbdv-close mt-1 col-1 text-center"
+       style="color: white"></a>
+    <div class="navbar-brand font-weight-bold wbdv-course-editor-title col">
+      {{course.title}}
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-3">
+      <div class="list-group bg-dark min-vh-100 wbdv-module-list">
+      <app-module-list [course]="course"></app-module-list>
+      </div>
+    </div>
+    <div class="col-9">
+      <app-lesson-tabs [course]="course" [modules]="modules"></app-lesson-tabs>
+    </div>
+  </div>
+
 </div>
 
 
