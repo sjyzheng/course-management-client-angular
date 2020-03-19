@@ -1,6 +1,10 @@
 <ul class="list-group">
-  <li *ngFor="let module of modules" class="list-group-item">
-    <a routerLink="/course-viewer/{{courseId}}/modules/{{module.id}}">
+  <li *ngFor="let module of modules"
+      class="list-group-item border-0 mx-3 mt-3 rounded wbdv-module-item"
+      [class]="{'active': module.id.toString()===moduleId}">
+    <a routerLink="/course-viewer/{{courseId}}/modules/{{module.id}}"
+       style="color: white"
+      [state]="{course: course, modules: modules}">
       {{module.title}}
     </a>
   </li>
