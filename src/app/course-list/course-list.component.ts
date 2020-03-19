@@ -7,7 +7,7 @@ import {CourseServiceClient} from '../services/CourseServiceClient';
   styleUrls: ['./course-list.component.css']
 })
 export class CourseListComponent implements OnInit {
-  courses = [];
+  courses: any = [];
 
   constructor(private service: CourseServiceClient) { }
 
