@@ -14,16 +14,11 @@
            (ngModelChange)="searchCourse(courseTitle)"/>
   </nav>
 </div>
-<ul class="list-group">
-  <li *ngFor="let course of courses"
-      class="list-group-item wbdv-student-course-list-item">
-    <span class="fas fa-file-alt mx-2" style="color: dodgerblue"></span>
-    <a routerLink="/course-viewer/{{course.id}}/"
-       [state]="{ course: course }">
-      {{course.title}}
-    </a>
-  </li>
-</ul>
+<app-course-list-header [layout]="layout" (layoutSelected)="changeLayout($event)"></app-course-list-header>
+<app-course-list-table *ngIf="layout==='table'" [courses]="courses" ></app-course-list-table>
+<app-course-list-grid *ngIf="layout==='grid'" [courses]="courses" ></app-course-list-grid>
+
+
 
 
 

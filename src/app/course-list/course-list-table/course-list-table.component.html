@@ -1,0 +1,11 @@
+<ul class="list-group">
+  <li *ngFor="let course of courses"
+      class="list-group-item wbdv-student-course-list-item">
+    <span class="fas fa-file-alt mx-2" style="color: dodgerblue"></span>
+    <a routerLink="/course-viewer/{{course.id}}/"
+       class="wbdv-student-course-title"
+       [state]="{ course: course }">
+      {{course.title}}
+    </a>
+  </li>
+</ul>

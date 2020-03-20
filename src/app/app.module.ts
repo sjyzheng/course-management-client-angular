@@ -12,6 +12,9 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { ModuleServiceClient } from './services/ModuleServiceClient';
 import { LessonServiceClient } from './services/LessonServiceClient';
+import { CourseListHeaderComponent } from './course-list/course-list-header/course-list-header.component';
+import { CourseListTableComponent } from './course-list/course-list-table/course-list-table.component';
+import { CourseListGridComponent } from './course-list/course-list-grid/course-list-grid.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { LessonServiceClient } from './services/LessonServiceClient';
     CourseListComponent,
     CourseViewerComponent,
     ModuleListComponent,
-    LessonTabsComponent
+    LessonTabsComponent,
+    CourseListHeaderComponent,
+    CourseListTableComponent,
+    CourseListGridComponent
   ],
   imports: [
     BrowserModule,

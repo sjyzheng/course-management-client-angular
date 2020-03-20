@@ -1,0 +1,11 @@
+<div  class="container col-12" id="firstRow">
+  <div id="table-title" class="row my-3">
+    <div *ngIf="layout === 'table'" class="col-8 col-md-6 col-lg-6 wbdv-header wbdv-title ml-2">Title</div>
+    <div *ngIf="layout === 'grid'" class="col-8 col-md-6 col-lg-6 wbdv-header wbdv-title ml-2">Recent Documents</div>
+    <div class="col">
+      <i class="fas fa-sort-alpha-down ml-2 float-right wbdv-header wbdv-sort"></i>
+      <a *ngIf="layout === 'table'" class="fas fa-th mr-2 float-right wbdv-button" (click)="changeLayout('grid')"></a>
+      <a *ngIf="layout === 'grid'" class="fas fa-list mx-2 float-right wbdv-button" (click)="changeLayout('table')"></a>
+    </div>
+  </div>
+</div>

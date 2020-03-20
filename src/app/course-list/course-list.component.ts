@@ -9,6 +9,7 @@ import {CourseServiceClient} from '../services/CourseServiceClient';
 export class CourseListComponent implements OnInit {
   courses: any = [];
   courseTitle = '';
+  layout = 'table';
 
   constructor(private service: CourseServiceClient) { }
 
@@ -23,4 +24,10 @@ export class CourseListComponent implements OnInit {
         courses : courses.filter(course => course.title.toLowerCase().includes(courseTitle.toLowerCase())))
       .then(courses => this.courses = courses);
   }
+
+  changeLayout(layout: string) {
+    this.layout = layout;
+    console.log(this.layout);
+  }
+
 }
