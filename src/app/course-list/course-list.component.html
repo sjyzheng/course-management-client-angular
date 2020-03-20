@@ -1,16 +1,23 @@
 <div class="container-fluid p-0">
-  <nav class="navbar navbar-light bg-light wbdv-student-course-list">
-    <button class="navbar-toggler mr-4 wbdv-field wbdv-hamburger" type="button" data-toggle="collapse"
+  <nav class="navbar navbar-light bg-light row wbdv-student-course-list">
+    <button class="navbar-toggler mx-2 wbdv-field wbdv-hamburger" type="button" data-toggle="collapse"
             data-target="#navbar" aria-controls="navbar" aria-expanded="false"
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"> </span>
     </button>
-    <span class="navbar-brand">Course Manager</span>
+    <span class="navbar-brand d-none d-md-inline col-4 ml-2 text-center wbdv-student-course-manager">Course Manager</span>
+    <input class="form-control col-4 wbdv-student-search-course-field"
+           type="search"
+           placeholder="Search Course"
+           aria-label="Search"
+           [(ngModel)]="courseTitle"
+           (ngModelChange)="searchCourse(courseTitle)"/>
   </nav>
 </div>
 <ul class="list-group">
   <li *ngFor="let course of courses"
       class="list-group-item wbdv-student-course-list-item">
+    <span class="fas fa-file-alt mx-2" style="color: dodgerblue"></span>
     <a routerLink="/course-viewer/{{course.id}}/"
        [state]="{ course: course }">
       {{course.title}}
