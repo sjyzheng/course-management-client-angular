@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class CourseServiceClient {
   findAllCourses = () =>
     fetch('https://wbdv-sp20-jzheng-server-java.herokuapp.com/api/courses')
-      .then(response => response.json())
+      .then(response => response.json());
 
   findCourseById = (cid) =>
     fetch(`https://wbdv-sp20-jzheng-server-java.herokuapp.com/api/courses/${cid}`)

@@ -5,3 +5,8 @@
 .wbdv-student-course-list-item a {
   color: black;
 }
+
+.wbdv-student-course-manager {
+  font-weight: bold;
+  font-style: normal;
+}
