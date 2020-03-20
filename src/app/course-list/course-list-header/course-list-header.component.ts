@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class CourseListHeaderComponent implements OnInit {
   @Input() layout;
   @Output() layoutSelected = new EventEmitter<string>();
+  @Output() orderSelected = new EventEmitter<string>();
+  @Input() order;
 
   constructor() { }
 
@@ -18,4 +20,7 @@ export class CourseListHeaderComponent implements OnInit {
     this.layoutSelected.emit(layout);
   }
 
+  changeOrder() {
+    this.orderSelected.emit(this.order);
+  }
 }

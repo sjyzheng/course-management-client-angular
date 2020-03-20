@@ -10,6 +10,7 @@ export class CourseListComponent implements OnInit {
   courses: any = [];
   courseTitle = '';
   layout = 'table';
+  order = 'down';
 
   constructor(private service: CourseServiceClient) { }
 
@@ -27,7 +28,22 @@ export class CourseListComponent implements OnInit {
 
   changeLayout(layout: string) {
     this.layout = layout;
-    console.log(this.layout);
+  }
+
+  changeOrder(curOrder: string) {
+      if (curOrder === 'up') {
+        this.courses.sort((a, b) => {
+          if (a.title.toLowerCase() > b.title.toLowerCase()) { return 1; } else { return -1; }
+        });
+        this.order = 'down';
+      } else {
+        this.courses.sort((a, b) => {
+          if (a.title.toLowerCase() < b.title.toLowerCase()) { return 1; } else { return -1; }
+        });
+        this.order = 'up';
+      }
+
+
   }
 
 }

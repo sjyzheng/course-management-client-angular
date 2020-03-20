@@ -14,7 +14,7 @@
            (ngModelChange)="searchCourse(courseTitle)"/>
   </nav>
 </div>
-<app-course-list-header [layout]="layout" (layoutSelected)="changeLayout($event)"></app-course-list-header>
+<app-course-list-header [layout]="layout" [order]="order" (layoutSelected)="changeLayout($event)" (orderSelected)="changeOrder($event)"></app-course-list-header>
 <app-course-list-table *ngIf="layout==='table'" [courses]="courses" ></app-course-list-table>
 <app-course-list-grid *ngIf="layout==='grid'" [courses]="courses" ></app-course-list-grid>
 

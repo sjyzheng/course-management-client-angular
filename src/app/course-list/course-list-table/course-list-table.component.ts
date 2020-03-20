@@ -13,4 +13,5 @@ export class CourseListTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
