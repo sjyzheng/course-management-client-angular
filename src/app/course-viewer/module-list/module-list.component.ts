@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ModuleServiceClient } from '../services/ModuleServiceClient';
-import { CourseServiceClient } from '../services/CourseServiceClient';
+import { ModuleServiceClient } from '../../services/ModuleServiceClient';
+import { CourseServiceClient } from '../../services/CourseServiceClient';
 
 @Component({
   selector: 'app-module-list',
