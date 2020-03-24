@@ -1,1 +1,16 @@
-<p>topic-pills works!</p>
+<div class="nav nav-pills nav-fill my-2 text-nowrap wbdv-topic-pill-list">
+  <div *ngFor="let topic of topics"
+       class="nav-item"
+       data-toggle="tooltip"
+       data-placement="right">
+    <div class="nav-link mx-1"
+         [class] = "{'active': topic.id.toString() === topicId, 'bg-light': topic.id.toString() !== topicId}">
+      <a routerLink="/course-viewer/{{courseId}}/modules/{{moduleId}}/lessons/{{lessonId}}/topics/{{topic.id}}"
+         style="color: black"
+         [class] = "{'text-white': topic.id.toString() === topicId}"
+         [state]="{course: course, modules: modules, lessons: lessons, topics: topics}">
+        {{topic.title}}
+      </a>
+    </div>
+  </div>
+</div>
