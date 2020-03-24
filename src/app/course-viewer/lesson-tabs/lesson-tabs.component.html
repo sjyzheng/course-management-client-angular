@@ -3,13 +3,13 @@
        class="nav-item wbdv-lesson-item"
        data-toggle="tooltip"
        data-placement="right">
-      <div class="nav-link mx-1"
-           [class] = "{'active': lesson.id.toString() === lessonId}">
-        <a routerLink="/course-viewer/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson.id}}"
-           style="color: black"
-           [state]="{course: course, modules: modules, lessons: lessons}">
-          {{lesson.title}}
-        </a>
-      </div>
+    <div class="nav-link mx-1"
+         [class] = "{'active': lesson.id.toString() === lessonId}">
+      <a routerLink="/course-viewer/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson.id}}"
+         style="color: black"
+         [state]="{course: course, modules: modules, lessons: lessons}">
+        {{lesson.title}}
+      </a>
+    </div>
   </div>
 </div>
