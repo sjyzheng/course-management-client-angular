@@ -10,12 +10,15 @@ import { CourseServiceClient } from '../services/CourseServiceClient';
 export class CourseViewerComponent implements OnInit {
   course: any = {};
   modules = [];
+  lessons = [];
 
   constructor(private route: ActivatedRoute, private service: CourseServiceClient, private router: Router) {
     this.course = this.router.getCurrentNavigation().extras.state ?
       this.router.getCurrentNavigation().extras.state.course : {title: ''} ;
     this.modules = this.router.getCurrentNavigation().extras.state ?
       this.router.getCurrentNavigation().extras.state.modules : [] ;
+    this.lessons = this.router.getCurrentNavigation().extras.state ?
+      this.router.getCurrentNavigation().extras.state.lessons : [] ;
   }
 
   ngOnInit(): void {
