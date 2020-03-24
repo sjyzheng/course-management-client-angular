@@ -16,6 +16,7 @@ import { CourseListHeaderComponent } from './course-list/course-list-header/cour
 import { CourseListTableComponent } from './course-list/course-list-table/course-list-table.component';
 import { CourseListGridComponent } from './course-list/course-list-grid/course-list-grid.component';
 import { TopicPillsComponent } from './course-viewer/topic-pills/topic-pills.component';
+import { TopicServiceClient } from './services/TopicServiceClient';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TopicPillsComponent } from './course-viewer/topic-pills/topic-pills.com
   providers: [
     CourseServiceClient,
     ModuleServiceClient,
-    LessonServiceClient
+    LessonServiceClient,
+    TopicServiceClient
   ],
   bootstrap: [AppComponent]
 })
