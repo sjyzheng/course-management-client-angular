@@ -7,7 +7,8 @@ const routes: Routes = [
   {path: '', component: CourseListComponent},
   {path: 'course-viewer/:courseId', component: CourseViewerComponent},
   {path: 'course-viewer/:courseId/modules/:moduleId', component: CourseViewerComponent},
-  {path: 'course-viewer/:courseId/modules/:moduleId/lessons/:lessonId', component: CourseViewerComponent}
+  {path: 'course-viewer/:courseId/modules/:moduleId/lessons/:lessonId', component: CourseViewerComponent},
+  {path: 'course-viewer/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId', component: CourseViewerComponent}
 ];
 
 @NgModule({
