@@ -7,5 +7,9 @@
        [state]="{ course: course }">
       {{course.title}}
     </a>
+    <a routerLink="/courses/{{course.id}}/quizzes"
+      class="float-right">
+      Quizzes
+    </a>
   </li>
 </ul>
