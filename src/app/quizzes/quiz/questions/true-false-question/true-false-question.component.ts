@@ -12,10 +12,11 @@ export class TrueFalseQuestionComponent implements OnInit {
     _id: '', title: '', question: '', answer: '', correct: ''
   };
   grading = false;
+  answer = '';
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
+  grade = () => this.grading = true;
 }
