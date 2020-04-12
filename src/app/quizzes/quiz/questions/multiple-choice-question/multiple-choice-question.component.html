@@ -21,6 +21,7 @@
         <i [ngClass]="{ 'float-right mr-2': true, 'fas': true, 'fa-check': grading && choice === question.correct, 'fa-times fa-lg': grading && wrongAnswer === choice }"></i>
     </div>
   </div>
+  <br>
   <p>Your Answer: {{answer}}</p>
   <button class="btn btn-success" (click)="grade()" [disabled]="grading">
     Grade

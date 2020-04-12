@@ -1,12 +1,24 @@
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-light bg-light row">
+    <a routerLink="/"
+       class="fas fa-times fa-lg wbdv-close mt-1 ml-4 text-center"
+       style="color: black"></a>
+    <div class="navbar-brand col text-center">
+      Quizzes
+    </div>
+  </nav>
+</div>
 <ul class="list-group">
   <li *ngFor="let quiz of quizzes"
       class="list-group-item wbdv-student-quiz-list-item">
     <a routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}"
-       class="wbdv-student-quiz-title">
+       class="wbdv-student-quiz-title"
+       [state]="{ quizTitle: quiz.title }">
       {{quiz.title}}
     </a>
     <a routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}"
-       class="btn btn-primary float-right">
+       class="btn btn-primary float-right"
+       [state]="{ quizTitle: quiz.title }">
       Start
     </a>
   </li>
