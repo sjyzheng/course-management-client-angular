@@ -1,8 +1,8 @@
 <div class="container">
   <h4>
     {{question.question}}
-    <i *ngIf="grading && answer === question.correct" class="fas fa-check float-right"></i>
-    <i *ngIf="grading && answer !== question.correct" class="fas fa-times float-right"></i>
+    <i *ngIf="grading && answer === question.correct" class="fas fa-check float-right mr-2"></i>
+    <i *ngIf="grading && answer !== question.correct" class="fas fa-times float-right mr-2"></i>
   </h4>
   <br>
   <div *ngFor="let choice of question.choices"
@@ -22,7 +22,7 @@
     </div>
   </div>
   <p>Your Answer: {{answer}}</p>
-  <button class="btn btn-success" (click)="grade()">
+  <button class="btn btn-success" (click)="grade()" [disabled]="grading">
     Grade
   </button>
 </div>

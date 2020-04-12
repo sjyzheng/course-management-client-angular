@@ -42,7 +42,7 @@
 
   </div>
   <p>Your Answer: {{answer}}</p>
-  <button class="btn btn-success" (click)="grade()">
+  <button class="btn btn-success" (click)="grade()" [disabled]="grading">
     Grade
   </button>
 </div>
