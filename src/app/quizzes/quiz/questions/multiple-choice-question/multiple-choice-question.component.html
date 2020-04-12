@@ -1,24 +1,25 @@
 <div class="container">
   <h4>
     {{question.question}}
-    <i *ngIf="grading && answer===question.correct" class="fas fa-check float-right"></i>
-    <i *ngIf="grading && answer!==question.correct" class="fas fa-times float-right"></i>
+    <i *ngIf="grading && answer === question.correct" class="fas fa-check float-right"></i>
+    <i *ngIf="grading && answer !== question.correct" class="fas fa-times float-right"></i>
   </h4>
   <br>
-  <div *ngFor="let choice of question.choices">
+  <div *ngFor="let choice of question.choices"
+       [ngClass]="{ center: true, 'wbdv-correct-answer': grading && choice === question.correct, 'wbdv-wrong-answer': grading && wrongAnswer === choice }">
     <div class="form-check">
-      <input [(ngModel)]="answer"
-             [disabled]="grading"
-             class="form-check-input"
-             type="radio"
-             name="{{question._id}}AnswerRadios"
-             id="{{choice}}"
-             value="{{choice}}">
-      <label class="form-check-label" for="{{choice}}">
-        {{choice}}
-      </label>
+        <input [(ngModel)]="answer"
+               [disabled]="grading"
+               class="form-check-input"
+               type="radio"
+               name="{{question._id}}AnswerRadios"
+               id="{{choice}}"
+               value="{{choice}}">
+        <label class="form-check-label" for="{{choice}}">
+          {{choice}}
+        </label>
+        <i [ngClass]="{ 'float-right mr-2': true, 'fas': true, 'fa-check': grading && choice === question.correct, 'fa-times fa-lg': grading && wrongAnswer === choice }"></i>
     </div>
-    <hr>
   </div>
   <p>Your Answer: {{answer}}</p>
   <button class="btn btn-success" (click)="grade()">

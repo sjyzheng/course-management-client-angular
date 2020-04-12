@@ -9,10 +9,13 @@ export class MultipleChoiceQuestionComponent implements OnInit {
   @Input() question;
   answer = '';
   grading = false;
+  wrongAnswer = '';
 
   constructor() { }
 
   ngOnInit(): void { }
 
-  grade = () => this.grading = true;
-}
+  grade() {
+    this.grading = true;
+    if (this.answer !== this.question.correct) { this.wrongAnswer = this.answer; }
+  }}
