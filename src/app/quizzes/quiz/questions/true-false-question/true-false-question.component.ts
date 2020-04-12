@@ -13,7 +13,6 @@ export class TrueFalseQuestionComponent implements OnInit {
   };
   grading = false;
   answer = '';
-  answerCorrect = false;
   wrongAnswer = '';
 
   constructor() { }
@@ -22,7 +21,6 @@ export class TrueFalseQuestionComponent implements OnInit {
 
   grade() {
     this.grading = true;
-    // if (this.answer.toLowerCase() === this.question.correct) { this.answerCorrect = true; }
     if (this.answer.toLowerCase() !== this.question.correct) { this.wrongAnswer = this.answer; }
   }
 }

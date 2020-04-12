@@ -19,7 +19,7 @@
           TRUE
         </label>
         <i *ngIf="grading && question.correct === 'true'" class="fas fa-check float-right mr-2"></i>
-        <i *ngIf="grading && wrongAnswer === 'TRUE'" class="fas fa-times float-right mr-2"></i>
+        <i *ngIf="grading && wrongAnswer === 'TRUE'" class="fas fa-times fa-lg float-right mr-2"></i>
       </div>
     </div>
 
@@ -36,7 +36,7 @@
           FALSE
         </label>
         <i *ngIf="grading && question.correct === 'false'" class="fas fa-check float-right mr-2"></i>
-        <i *ngIf="grading && wrongAnswer === 'FALSE'" class="fas fa-times fa-lg float-right mr-2"></i>
+        <i *ngIf="grading && wrongAnswer === 'FALSE'" class="fas fa-times float-right mr-2"></i>
       </div>
     </div>
 
