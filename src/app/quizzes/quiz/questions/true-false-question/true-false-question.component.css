@@ -5,3 +5,17 @@
 .fa-times {
   color: red;
 }
+
+.wbdv-correct-answer {
+  background-color: rgba(173, 235, 173, 0.5);
+}
+
+.wbdv-wrong-answer {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.center {
+  padding: 15px 0;
+  border-bottom: 1px solid black;
+}
+

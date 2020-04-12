@@ -1,41 +1,48 @@
 <div class="container">
   <h4>
     {{question.question}}
-    <i *ngIf="grading && answer===question.correct.toUpperCase()" class="fas fa-check float-right"></i>
-    <i *ngIf="grading && answer!==question.correct.toUpperCase()" class="fas fa-times float-right"></i>
+    <i *ngIf="grading && answer === question.correct.toUpperCase()" class="fas fa-check float-right mr-2"></i>
+    <i *ngIf="grading && answer !== question.correct.toUpperCase()" class="fas fa-times float-right mr-2"></i>
   </h4>
   <br>
   <div>
-    <div class="form-check">
-      <input [(ngModel)]="answer"
-             [disabled]="grading"
-             class="form-check-input"
-             type="radio"
-             name="{{question._id}}AnswerRadios"
-             id="{{question._id}}OptionTrue"
-             value="TRUE">
-      <label class="form-check-label" for="{{question._id}}OptionTrue">
-        TRUE
-      </label>
+    <div [ngClass]="{ center: true, 'wbdv-correct-answer': grading && question.correct === 'true', 'wbdv-wrong-answer': grading && wrongAnswer === 'TRUE' }">
+      <div class="form-check">
+        <input [(ngModel)]="answer"
+               [disabled]="grading"
+               class="form-check-input"
+               type="radio"
+               name="{{question._id}}AnswerRadios"
+               id="{{question._id}}OptionTrue"
+               value="TRUE">
+        <label class="form-check-label" for="{{question._id}}OptionTrue">
+          TRUE
+        </label>
+        <i *ngIf="grading && question.correct === 'true'" class="fas fa-check float-right mr-2"></i>
+        <i *ngIf="grading && wrongAnswer === 'TRUE'" class="fas fa-times float-right mr-2"></i>
+      </div>
     </div>
-    <hr>
-    <div class="form-check">
-      <input [(ngModel)]="answer"
-             [disabled]="grading"
-             class="form-check-input"
-             type="radio"
-             name="{{question._id}}AnswerRadios"
-             id="{{question._id}}OptionFalse"
-             value="FALSE">
-      <label class="form-check-label" for="{{question._id}}OptionFalse">
-        FALSE
-      </label>
+
+    <div [ngClass]="{ center: true, 'wbdv-correct-answer': grading && question.correct === 'false', 'wbdv-wrong-answer': grading && wrongAnswer === 'FALSE' }">
+      <div class="form-check">
+        <input [(ngModel)]="answer"
+               [disabled]="grading"
+               class="form-check-input"
+               type="radio"
+               name="{{question._id}}AnswerRadios"
+               id="{{question._id}}OptionFalse"
+               value="FALSE">
+        <label class="form-check-label" for="{{question._id}}OptionFalse">
+          FALSE
+        </label>
+        <i *ngIf="grading && question.correct === 'false'" class="fas fa-check float-right mr-2"></i>
+        <i *ngIf="grading && wrongAnswer === 'FALSE'" class="fas fa-times fa-lg float-right mr-2"></i>
+      </div>
     </div>
-    <hr>
+
   </div>
   <p>Your Answer: {{answer}}</p>
-  <button class="btn btn-success"
-          (click)="grade()">
+  <button class="btn btn-success" (click)="grade()">
     Grade
   </button>
 </div>
