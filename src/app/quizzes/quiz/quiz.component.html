@@ -20,10 +20,10 @@
         </app-true-false-question>
         <app-multiple-choice-question
           [question] = "question"
+          [(answer)]="question.answer"
           *ngSwitchCase="'MULTIPLE_CHOICE'">
         </app-multiple-choice-question>
       </div>
     </li>
   </ul>
 </div>
-
