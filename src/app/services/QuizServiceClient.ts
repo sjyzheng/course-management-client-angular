@@ -5,8 +5,8 @@ export class QuizServiceClient {
   findAllQuizzes = () =>
     fetch('http://localhost:3000/api/quizzes')
       .then(response => response.json())
-  findQuizById = (qid) =>
-    fetch(`http://localhost:3000/api/quizzes/${qid}`)
+  findQuizAttemptsById = (qid) =>
+    fetch(`http://localhost:3000/api/quizzes/${qid}/attempts`)
       .then(response => response.json())
   submitQuiz = (qid, questions) => {
     fetch(`http://localhost:3000/api/quizzes/${qid}/attempts`, {
@@ -16,6 +16,5 @@ export class QuizServiceClient {
         'content-type': 'application/json'
       }
     }).then(response => response.json())
-      .then(result => console.log(result))
   }
 }
