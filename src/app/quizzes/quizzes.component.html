@@ -21,5 +21,14 @@
        [state]="{ quizTitle: quiz.title }">
       Start
     </a>
+    <br>
+    <div *ngIf="quiz.attempts">
+      Attempted: {{quiz.attempts.length}}
+      <ul class="wbdv-quiz-attempt-score-list" >
+        <li *ngFor="let attempt of quiz.attempts">
+          Score: {{attempt.score}} %
+        </li>
+      </ul>
+    </div>
   </li>
 </ul>

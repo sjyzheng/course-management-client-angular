@@ -34,5 +34,4 @@ export class QuizComponent implements OnInit {
   submitQuiz (qid, questions) :void {
     this.quizServiceClient.submitQuiz(qid, questions)
   }
-
 }
