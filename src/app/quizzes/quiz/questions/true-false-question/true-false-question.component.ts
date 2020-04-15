@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionServiceClient } from '../../../../services/QuestionServiceClient';
 
@@ -11,9 +11,11 @@ export class TrueFalseQuestionComponent implements OnInit {
   @Input() question = {
     _id: '', title: '', question: '', answer: '', correct: ''
   };
+  @Input() answer = '';
   grading = false;
-  answer = '';
   wrongAnswer = '';
+  @Output()
+  answerChange = new EventEmitter<string>()
 
   constructor() { }
 
@@ -21,7 +23,8 @@ export class TrueFalseQuestionComponent implements OnInit {
 
   grade() {
     this.grading = true;
-    if (this.answer.toLowerCase() !== this.question.correct) { this.wrongAnswer = this.answer; }
-    if (this.answer === '') { this.answer = 'NOT ANSWERED'; }
+    if (this.answer !== this.question.correct) { this.wrongAnswer = this.answer; }
+    if (!this.answer) { this.answer = 'NOT ANSWERED'; }
+    this.answerChange.emit(this.answer)
   }
 }
