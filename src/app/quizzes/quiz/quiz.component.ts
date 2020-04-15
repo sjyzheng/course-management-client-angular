@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionServiceClient } from '../../services/QuestionServiceClient';
+import { QuizServiceClient } from '../../services/QuizServiceClient';
 
 @Component({
   selector: 'app-quiz',
@@ -13,7 +14,10 @@ export class QuizComponent implements OnInit {
   questions = [];
   courseId = '';
 
-  constructor(private route: ActivatedRoute, private service: QuestionServiceClient, private router: Router) {
+  constructor(private route: ActivatedRoute,
+              private questionService: QuestionServiceClient,
+              private quizServiceClient: QuizServiceClient,
+              private router: Router) {
     this.quizTitle = this.router.getCurrentNavigation().extras.state ?
       this.router.getCurrentNavigation().extras.state.quizTitle : '';
   }
@@ -22,9 +26,14 @@ export class QuizComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.quizId = params.quizId;
       this.courseId = params.courseId;
-      this.service.findQuestionsForQuiz(this.quizId)
+      this.questionService.findQuestionsForQuiz(this.quizId)
         .then(questions => this.questions = questions);
     });
   }
+
+  submitQuiz (qid, questions) :void {
+    this.quizServiceClient.submitQuiz(qid, questions)
+  }
+
 
 }
