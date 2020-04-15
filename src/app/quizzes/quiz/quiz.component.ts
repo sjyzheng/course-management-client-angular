@@ -13,6 +13,7 @@ export class QuizComponent implements OnInit {
   quizTitle = '';
   questions = [];
   courseId = '';
+  submitted = false;
 
   constructor(private route: ActivatedRoute,
               private questionService: QuestionServiceClient,
@@ -33,5 +34,6 @@ export class QuizComponent implements OnInit {
 
   submitQuiz (qid, questions) :void {
     this.quizServiceClient.submitQuiz(qid, questions)
+    this.submitted = true;
   }
 }

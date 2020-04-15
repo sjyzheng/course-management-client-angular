@@ -12,7 +12,7 @@ export class TrueFalseQuestionComponent implements OnInit {
     _id: '', title: '', question: '', answer: '', correct: ''
   };
   @Input() answer = '';
-  grading = false;
+  @Input() grading;
   wrongAnswer = '';
   @Output()
   answerChange = new EventEmitter<string>()
