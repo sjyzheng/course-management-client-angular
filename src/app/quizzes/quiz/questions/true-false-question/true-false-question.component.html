@@ -6,7 +6,7 @@
   </h4>
   <br>
   <div>
-    <div [ngClass]="{ center: true, 'wbdv-correct-answer': grading && question.correct === 'true', 'wbdv-wrong-answer': grading && wrongAnswer === 'TRUE' }">
+    <div [ngClass]="{ center: true, 'wbdv-correct-answer': grading && question.correct === 'TRUE', 'wbdv-wrong-answer': grading && wrongAnswer === 'TRUE' }">
       <div class="form-check">
         <input [(ngModel)]="answer"
                [disabled]="grading"
@@ -18,12 +18,12 @@
         <label class="form-check-label" for="{{question._id}}OptionTrue">
           TRUE
         </label>
-        <i *ngIf="grading && question.correct === 'true'" class="fas fa-check float-right mr-2"></i>
+        <i *ngIf="grading && question.correct === 'TRUE'" class="fas fa-check float-right mr-2"></i>
         <i *ngIf="grading && wrongAnswer === 'TRUE'" class="fas fa-times fa-lg float-right mr-2"></i>
       </div>
     </div>
 
-    <div [ngClass]="{ center: true, 'wbdv-correct-answer': grading && question.correct === 'false', 'wbdv-wrong-answer': grading && wrongAnswer === 'FALSE' }">
+    <div [ngClass]="{ center: true, 'wbdv-correct-answer': grading && question.correct === 'FALSE', 'wbdv-wrong-answer': grading && wrongAnswer === 'FALSE' }">
       <div class="form-check">
         <input [(ngModel)]="answer"
                [disabled]="grading"
@@ -35,7 +35,7 @@
         <label class="form-check-label" for="{{question._id}}OptionFalse">
           FALSE
         </label>
-        <i *ngIf="grading && question.correct === 'false'" class="fas fa-check float-right mr-2"></i>
+        <i *ngIf="grading && question.correct === 'FALSE'" class="fas fa-check float-right mr-2"></i>
         <i *ngIf="grading && wrongAnswer === 'FALSE'" class="fas fa-times float-right mr-2"></i>
       </div>
     </div>

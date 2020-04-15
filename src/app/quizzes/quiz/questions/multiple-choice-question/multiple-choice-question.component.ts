@@ -20,9 +20,7 @@ export class MultipleChoiceQuestionComponent implements OnInit {
   grade() {
     this.grading = true;
     if (this.answer !== this.question.correct) { this.wrongAnswer = this.answer; }
-    if (this.answer === '') { this.answer = 'NOT ANSWERED'; }
-  }
-  submitAnswer() {
+    if (!this.answer) { this.answer = 'NOT ANSWERED'; }
     this.answerChange.emit(this.answer)
   }
 }
