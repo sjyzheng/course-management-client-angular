@@ -1,6 +1,7 @@
 <div class="container-fluid p-0">
   <nav class="navbar navbar-light bg-light row">
-    <a routerLink="/courses/{{courseId}}/quizzes"
+    <a *ngIf="!grading"
+      routerLink="/courses/{{courseId}}/quizzes"
        class="fas fa-times fa-lg wbdv-close mt-1 ml-4 text-center"
        style="color: black"></a>
     <div class="navbar-brand col text-center">
@@ -18,12 +19,14 @@
           [question] = "question"
           [(answer)]="question.answer"
           [grading] = 'submitted'
+          (answerChange)="answerChangedHandler()"
           *ngSwitchCase="'TRUE_FALSE'">
         </app-true-false-question>
         <app-multiple-choice-question
           [question] = "question"
           [(answer)]="question.answer"
           [grading] = 'submitted'
+          (answerChange)="answerChangedHandler()"
           *ngSwitchCase="'MULTIPLE_CHOICE'">
         </app-multiple-choice-question>
       </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionServiceClient } from '../../services/QuestionServiceClient';
 import { QuizServiceClient } from '../../services/QuizServiceClient';
@@ -14,6 +14,8 @@ export class QuizComponent implements OnInit {
   questions = [];
   courseId = '';
   submitted = false;
+  grading = false;
+
 
   constructor(private route: ActivatedRoute,
               private questionService: QuestionServiceClient,
@@ -31,8 +33,12 @@ export class QuizComponent implements OnInit {
         .then(questions => this.questions = questions);
     });
   }
+  answerChangedHandler() {
+    this.grading = true;
+  }
 
   submitQuiz (qid, questions) :void {
+    console.log(this.questions)
     this.quizServiceClient.submitQuiz(qid, questions)
     this.submitted = true;
   }
