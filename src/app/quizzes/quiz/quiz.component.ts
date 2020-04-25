@@ -38,8 +38,8 @@ export class QuizComponent implements OnInit {
   }
 
   submitQuiz (qid, questions) :void {
-    console.log(this.questions)
     this.quizServiceClient.submitQuiz(qid, questions)
     this.submitted = true;
+    this.grading = false;
   }
 }

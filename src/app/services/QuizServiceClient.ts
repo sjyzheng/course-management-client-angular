@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class QuizServiceClient {
   findAllQuizzes = () =>
-    fetch('http://localhost:3000/api/quizzes')
+    fetch('https://wbdv-sp20-jz-server-node-a9.herokuapp.com/api/quizzes')
       .then(response => response.json())
   findQuizAttemptsById = (qid) =>
-    fetch(`http://localhost:3000/api/quizzes/${qid}/attempts`)
+    fetch(`https://wbdv-sp20-jz-server-node-a9.herokuapp.com/api/quizzes/${qid}/attempts`)
       .then(response => response.json())
   submitQuiz = (qid, questions) => {
-    fetch(`http://localhost:3000/api/quizzes/${qid}/attempts`, {
+    fetch(`https://wbdv-sp20-jz-server-node-a9.herokuapp.com/api/quizzes/${qid}/attempts`, {
       method: 'POST',
       body: JSON.stringify(questions),
       headers: {
